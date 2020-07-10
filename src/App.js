@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import logo from './logo.svg';
 import Form from "./components/Form";
 import Grafico from "./components/Graphs";
 
@@ -27,6 +28,7 @@ export default class App extends Component {
       title: false
     });
     return false;
+    
   };
   
   setChartType = e => {
@@ -46,13 +48,17 @@ export default class App extends Component {
     });
     return false;
   }
+
   
   render() {
     return (
       <div className="App">
-        
+         <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        </header>
         <br/>
         <br/>
+        <div className='sidebar'>
         <Form handleSubmit={this.addData} setChartType={this.setChartType} handleChangeTitle={this.changeTitle}/>
         <br/>
         <br/>
@@ -63,6 +69,7 @@ export default class App extends Component {
           values={this.state.values}
           chartType={this.state.chartType}
         />
+        </div>
         </div>
       </div>
     );

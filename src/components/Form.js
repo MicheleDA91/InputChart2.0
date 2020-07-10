@@ -9,7 +9,7 @@ export default class Form extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.handleChangeTitle}>
+          <form onSubmit={this.props.handleChangeTitle}>
           <input type="text" name="title" placeholder="titolo"/>
           <button type="submit">Aggiungi titolo</button>
         </form>
@@ -31,6 +31,8 @@ export default class Form extends Component {
           <option value="bar">Bar</option>
           <option value="line">Line</option>
           <option value="pie">Pie</option>
+          <option value='scatter'>Personalizzato..</option>
+         
           
         </select>
       </div>

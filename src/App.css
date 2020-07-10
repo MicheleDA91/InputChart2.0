@@ -38,7 +38,17 @@
 }
 
 .modal {
+  position: relative;
+  left: 500px;
   width: 500px;
   border-color: red;
  margin: 10 px;
+}
+.sidebar{
+  position: fixed;
+  left:0px;
+  top: 10vh;
+  width:250px;
+  height: 100%;
+  background-color: lightgrey;
 }
