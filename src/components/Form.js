@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 
+
+
+
+
 export default class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
   
-  render() {
+ render() {
+ 
     return (
       <div>
           <form onSubmit={this.props.handleChangeTitle}>
@@ -19,6 +24,7 @@ export default class Form extends Component {
           <br/>
           <input type="text" name="value" placeholder="valore"/>
           <br/>
+          
           <button type="submit">Aggiungi</button>
         </form>
         <select

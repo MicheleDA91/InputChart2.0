@@ -14,7 +14,7 @@ export default class Grafico extends Component {
             fill: false,
             lineTension: 0.1,
             backgroundColor: [],
-            borderColor: 'rgba(75,192,192,1)',
+            borderColor: ["rgba(75,192,192,1)","rgba(255, 0, 0, 0.6)"],
             borderCapStyle: "butt",
             borderDash: [],
             borderDashOffset: 0.0,
@@ -31,6 +31,15 @@ export default class Grafico extends Component {
             data: []
           }
         ]
+      },
+      options :{
+        scales: {
+          yaxes:[{
+            tick:{
+            beginatzero: true
+            }
+          }]
+        }
       }
     };
   }
@@ -39,7 +48,7 @@ export default class Grafico extends Component {
     const data = {
       ...this.state.chartData,
       labels: this.props.labels || [],
-      datasets: [{ ...this.state.chartData.datasets, backgroundColor: this.props.colors || [], data: this.props.values || []  }]
+      datasets: [{ ...this.state.chartData.datasets, ...this.state.options, backgroundColor: this.props.colors || [], data: this.props.values || []  }]
     }
     const chart = new ChartJS(this.chart.current, { type: this.props.chartType || 'pie', data })
     this.setState({
